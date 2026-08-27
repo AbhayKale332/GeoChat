@@ -26,7 +26,7 @@ from geochat.constants import IGNORE_INDEX, IMAGE_TOKEN_INDEX, DEFAULT_IMAGE_PAT
 
 class GeoChatMetaModel:
 
-    def __init__(self, config):
+    def __init__(self, config, *args, **kwargs):
         super(GeoChatMetaModel, self).__init__(config)
 
         if hasattr(config, "mm_vision_tower"):

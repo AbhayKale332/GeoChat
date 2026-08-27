@@ -34,14 +34,14 @@ class GeoChatConfig(LlamaConfig):
 class GeoChatLlamaModel(GeoChatMetaModel, LlamaModel):
     config_class = GeoChatConfig
 
-    def __init__(self, config: LlamaConfig):
+    def __init__(self, config: LlamaConfig, *args, **kwargs):
         super(GeoChatLlamaModel, self).__init__(config)
 
 
 class GeoChatLlamaForCausalLM(LlamaForCausalLM, GeoChatMetaForCausalLM):
     config_class = GeoChatConfig
 
-    def __init__(self, config):
+    def __init__(self, config, *args, **kwargs):
         super(LlamaForCausalLM, self).__init__(config)
         self.model = GeoChatLlamaModel(config)
 
